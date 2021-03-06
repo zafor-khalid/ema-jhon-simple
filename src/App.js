@@ -15,11 +15,11 @@ import ProductDetail from './components/ProductDetail/ProductDetail';
 function App() {
   return (
     <div>
-      <Header/>
+      <Header />
       <Router>
         <Switch>
           <Route path="/shop">
-          <Shop/>
+            <Shop/>
           </Route>
           <Route path="/review">
             <Review/>
@@ -28,18 +28,18 @@ function App() {
             <Inventory/>
           </Route>
           <Route exact path="/">
-          <Shop/>
+            <Shop/>
           </Route>
           <Route path="/product/:productKey">
-          <ProductDetail/>
+            <ProductDetail />
           </Route>
           <Route path="*">
-            <NotFound/>
+            <NotFound />
           </Route>
         </Switch>
       </Router>
-     
-     
+
+
     </div>
   );
 }
