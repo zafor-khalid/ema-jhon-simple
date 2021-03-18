@@ -79,7 +79,7 @@ function Login() {
         })
     }
     if (!newUser && user.email && user.password) {
-      signInWithEmailAndPassword(user.name, user.password)
+      signInWithEmailAndPassword(user.email, user.password)
         .then(res => {
           handleResponse(res, true)
         })

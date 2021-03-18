@@ -17,7 +17,7 @@ export const handelGoogleSignIn = () => {
                 success: true
             }
             return signedUser;
-            console.log(displayName, photoURL, email)
+            // console.log(displayName, photoURL, email)
         })
         .catch(err => {
             alert(err)
@@ -39,8 +39,11 @@ export const handleFbSignIn = () => {
 
             // The signed-in user info.
             var user = result.user;
-            user.success = true;
-            
+            user.success = true;  // create a new property of user Object
+            // Object.defineProperty(user, 'success', {
+            //     value: true, 
+            //     writable: false
+            //   });
             return user;
             // ...
         })
@@ -93,7 +96,7 @@ export const handelSignOut = () => {
 }
 
 export const signInWithEmailAndPassword = (email, password) => {
-    firebase.auth().signInWithEmailAndPassword(email,password)
+    return firebase.auth().signInWithEmailAndPassword(email,password)
         .then((res) => {
             const newUserInfo = res.user;
             newUserInfo.error = '';
